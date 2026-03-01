@@ -1,0 +1,23 @@
+{
+  "name": "build-pivot-kill-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for BUILD/PIVOT/KILL decision-making game",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "decision-making",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.16.3",
+    "dotenv": "^16.4.5",
+    "@anthropic-ai/sdk": "^0.32.1"
+  }
+}
