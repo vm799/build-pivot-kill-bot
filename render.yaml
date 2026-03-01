@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: build-pivot-kill-bot
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    
+    # Environment variables
+    envVars:
+      - key: BOT_TOKEN
+        scope: build
+        fromDatabase:
+          name: build_pivot_kill_bot
+          property: BOT_TOKEN
+      - key: ANTHROPIC_API_KEY
+        scope: build
+        fromDatabase:
+          name: build_pivot_kill_bot
+          property: ANTHROPIC_API_KEY
+    
+    # Build and deploy settings
+    buildFilter:
+      paths:
+        - "**"
+    
+    # Health check
+    healthCheckPath: /
+    preDeployCommand: npm install
